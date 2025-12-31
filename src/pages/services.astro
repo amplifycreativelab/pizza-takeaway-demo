@@ -2,6 +2,10 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import Button from "../components/Button.astro";
+
+const base = import.meta.env.BASE_URL.endsWith("/")
+    ? import.meta.env.BASE_URL
+    : `${import.meta.env.BASE_URL}/`;
 ---
 
 <BaseLayout title="Catering & Services | Concept Catering">
@@ -57,7 +61,7 @@ import Button from "../components/Button.astro";
                         >
                     </li>
                 </ul>
-                <Button href="contact" variant="primary">Enquire Now</Button>
+                <Button href={`${base}contact`} variant="primary">Enquire Now</Button>
             </div>
 
             <div
@@ -84,7 +88,7 @@ import Button from "../components/Button.astro";
                     > when calling.
                 </p>
                 <Button
-                    href="menu"
+                    href={`${base}menu`}
                     variant="outline"
                     class="text-white border-white hover:bg-white hover:text-charcoal bg-transparent w-full"
                     >View Menu</Button

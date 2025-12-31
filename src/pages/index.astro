@@ -10,6 +10,10 @@ import site from "../data/site.json";
 import { Image } from "astro:assets";
 import heroImage from "../assets/images/hero-main.webp";
 
+const base = import.meta.env.BASE_URL.endsWith("/")
+	? import.meta.env.BASE_URL
+	: `${import.meta.env.BASE_URL}/`;
+
 const reviews = [
 	{
 		name: "Sarah M.",
@@ -73,7 +77,7 @@ const reviews = [
 					Order Online
 				</Button>
 				<Button
-					href="menu"
+					href={`${base}menu`}
 					variant="outline"
 					size="lg"
 					class="text-xl bg-white w-full md:w-auto"

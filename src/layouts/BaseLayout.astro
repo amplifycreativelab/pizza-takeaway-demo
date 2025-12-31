@@ -17,10 +17,11 @@ const {
     description = site.description,
     image = "/images/og-default.jpg",
 } = Astro.props;
-const base = import.meta.env.BASE_URL === "/" ? "/" : import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.endsWith("/")
+    ? import.meta.env.BASE_URL
+    : `${import.meta.env.BASE_URL}/`;
 
-// Ensure base ends with / for favicon if needed, but usually just needs to be prepended
-const favIconPath = `${base}favicon.svg`.replace("//", "/");
+const favIconPath = `${base}favicon.svg`;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---

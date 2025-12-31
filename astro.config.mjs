@@ -8,7 +8,7 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   site: "https://amplifycreativelab.github.io",
-  base: "/demo-pizza-takeaway",
+  base: "/demo-pizza-tekeaway",
 
   vite: {
     plugins: [tailwindcss()]
